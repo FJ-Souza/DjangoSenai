@@ -50,3 +50,31 @@ Após iniciar um projeto Django devemos inicializar um servidor para testarmos n
 ```bash
 (igor)C:\python\Django\trilhas> python manage.py startapp siteTrilhas
 ```
+
+
+
+
+
+
+
+
+
+## Dicas:
+**Replicação de ambientes:**
+- Para replicar ambientes venvs vamos utilizar o modulo no python chamado freeze. Para que ele possa salvar em um arquivo txt todos os modulos e bibliotecas que utilizamos no projeto.
+- Basta utilizar o comando "pip freeze > nome_arquivo.txt":
+```bash
+(igor)C:\python\Django> pip freeze > requeriments.txt
+```
+- Agora para você voltar e criar um servidor igual basta utilizar o comando "pip install -r nome_do_arquivo.txt"
+```bash
+(igor)C:\python\Django> pip install -r requeriments.txt
+```
+**Desativação de uma VENV:**
+- Para desativar uma VENV basta apenas executar o comando "deactivate":
+ ```bash
+(igor)C:\python\Django> deactivate
+C:\python\Django>
+``` 
+
+

@@ -11,6 +11,12 @@
 
 # Passo a Passo
 
+## Pré-requisitos:
+-Instalação do Mysql: [Mysql](https://dev.mysql.com/downloads/installer/)<br>
+-Instalação do Python: [Python](https://www.python.org/downloads/)<br>
+-Instalação do Workbeanch: [WorkBeanch](https://dev.mysql.com/downloads/workbench/)<br>
+-Instalação do VSCode: [VSCode](https://code.visualstudio.com/download)<br>
+
 ## 0- Criação de VENV e instalação do Django:
 <b>0.0-</b> Código para criar a VENV "python -m venv 'nome_do_ambiente_virtual': "
 ```bash

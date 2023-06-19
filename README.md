@@ -10,3 +10,5 @@
 <p>Nesse repositorio iremos realizar um passo a passo de criação de uma aplicação em django, para ficar de base para consulta dos alunos. Todos procedimentos de configurações será realizados e documentado para auxilio do desenvolvimento individual de cada um dos alunos no programa Trilhas de Futuro.</p>
 
 # Passo a Passo
+
+## 0- Criação de VENV:

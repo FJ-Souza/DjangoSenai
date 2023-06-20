@@ -75,8 +75,25 @@ Após iniciar um projeto Django devemos inicializar um servidor para testarmos n
 ![rotas](https://github.com/IMNascimento/DjangoSenai/assets/28989407/0b5da0d5-b9f2-431c-8e8a-91a3f6c77dfc)<br>
 - Agora registramos nossa rota basta apenas você acessar e verificar se o acesso funcionou corretamente na web. Deixamos marcado de vermelho na imagem o sistema de diretorio para o seu auxilio e deixamos na marcação verde os itens que deve ser adicionado no seu arquivo para o funcionamento correto.
 
-
-
+## 4- Criando Templates no App Django:
+**4.0-** Primeiro dentro da pasta do seu app crie uma pasta chamada templates. No nosso casso nosso app chama "siteTrilhas" e dentro dessa pasta nós iremos criar uma pasta chamada "templates".<br>
+**4.1-** Dentro dessa pasta crie um arquivo chamado index.html e coloque os seguintes códigos: 
+```html5
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<title>Teste Template</title>
+</head>
+<body>
+<h1>Estamos criando um template.</h1>
+</body>
+</html>
+```
+**4.2-** Agora vá no arquivo de view.py e coloque o código como está a imagem abaixo:<br>
+![viewtemplate](https://github.com/IMNascimento/DjangoSenai/assets/28989407/3bf38177-dc78-43a2-afe9-d296a009de0c)<br>
+**4.3-** Agora vá ao arquivo de urls.py e coloque o código a baixo:<br>
+![template](https://github.com/IMNascimento/DjangoSenai/assets/28989407/3782f1fd-f47d-4780-a344-2db876d54c58)<br>
+-Pronto após execução desses passos tente acessar o endereço 127.0.0.1:8000/pagina o acesso tem que ocorrer corretamente.
 
 ## Dicas:
 **Replicação de ambientes:**

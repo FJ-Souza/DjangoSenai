@@ -56,11 +56,24 @@ Após iniciar um projeto Django devemos inicializar um servidor para testarmos n
 ```bash
 (igor)C:\python\Django\trilhas> python manage.py startapp siteTrilhas
 ```
+## 2- Registrando App no Django:
+**2.0-** Para verificar o nome do app criado você vai na pasta do app no arquivo app.py, vamos demonstrar com a foto abaixo:
+![app](https://github.com/IMNascimento/DjangoSenai/assets/28989407/b64f64ae-4e7e-47b1-8316-73c4501809cb)<br>
+-Como podemos verificar na foto temos em vermelho o sistema de diretorio até o arquivo e destacado de verde temos o nome do nosso app.<br>
+**2.1-** Agora vamos registrar esse app vamos na pasta do nosso projeto e encontraremos o arquivo "settings.py" nele iremos inserir o nome da nossa aplicação como iremos verificar na foto a seguir:
+![registro](https://github.com/IMNascimento/DjangoSenai/assets/28989407/25de48b3-2f5d-433a-8895-07ba60582974)
+<br>
+-Deixamos novamente com a cor vermelho o sistema de diretorio até o arquivo e marcado de verde a linha com nome que seria inserido.<br>
+- Agora que nossa aplicação já foi cadastrada podemos testar se ela irá funcionar corretamente. Para isso precisaremos criar urls para o carregamento externo de nossa página. Veremos essa criação na próxima etapa.
 
-
-
-
-
+## 3- Criando Url no App Django:
+**3.0-** Criação de um arquivo urls.py dentro do seu app que no nosso caso chama "siteTrilhas":
+![url](https://github.com/IMNascimento/DjangoSenai/assets/28989407/1b3bf2eb-b78c-4c4b-8693-254a718bdb19)<br>
+**3.1-** Quando criarmos esse arquivo url o editor irá informa que não existe o método para isso iremos criar ele em seguida.
+![view](https://github.com/IMNascimento/DjangoSenai/assets/28989407/eb553e1c-4356-4980-800d-ad52bb5fd3d6)<br>
+**3.2-** Como vimos na imagem acima criamos uma view para exibir um texto "Olá mundo." na nossa página web. Por último Precisamos registrar nossas rotas. <br>
+![rotas](https://github.com/IMNascimento/DjangoSenai/assets/28989407/0b5da0d5-b9f2-431c-8e8a-91a3f6c77dfc)<br>
+- Agora registramos nossa rota basta apenas você acessar e verificar se o acesso funcionou corretamente na web. Deixamos marcado de vermelho na imagem o sistema de diretorio para o seu auxilio e deixamos na marcação verde os itens que deve ser adicionado no seu arquivo para o funcionamento correto.
 
 
 

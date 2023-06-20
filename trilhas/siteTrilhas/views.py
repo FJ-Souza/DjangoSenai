@@ -8,3 +8,7 @@ def index(request):
     return HttpResponse('<h1>Olá mundo.</h1>')
 
 
+def pagina(request):
+    return render(request,'index.html')
+
+

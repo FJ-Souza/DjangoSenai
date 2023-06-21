@@ -95,6 +95,25 @@ Após iniciar um projeto Django devemos inicializar um servidor para testarmos n
 ![template](https://github.com/IMNascimento/DjangoSenai/assets/28989407/3782f1fd-f47d-4780-a344-2db876d54c58)<br>
 -Pronto após execução desses passos tente acessar o endereço 127.0.0.1:8000/pagina o acesso tem que ocorrer corretamente.
 
+## 5- Criando e carregando arquivos estáticos Django:
+**5.0** Vamos no arquivo settings.py na pasta do seu projeto e na linha de templates altere como vai demonstrar a foto a baixo:<br>
+![os](https://github.com/IMNascimento/DjangoSenai/assets/28989407/69b21f1e-fe85-409b-ac94-f46aea5a3048)<br>
+-Esse import OS nós adicionamos no inicio do arquivo settings.py.<br>
+![temp](https://github.com/IMNascimento/DjangoSenai/assets/28989407/cbbdea71-6f9d-47f5-997b-291613c8884d)<br>
+-Agora circulado de vermelho temos o codigo que devemos colocar. Além dessas alterações temos que colocar no final do nosso arquivo o files statics como veremos na foto a seguir.<br>
+![static](https://github.com/IMNascimento/DjangoSenai/assets/28989407/f50a6d1d-0aa9-4762-be6d-87f3f04a041a)<br>
+-Como vemos na imagem a cima passamos um caminho de uma pasta static dentro de "DjangoSenai/static", essa pasta static vai precisar ser criada na pastat base do seu projeto.<br>
+
+
+
+
+
+
+
+
+
+
+
 ## Dicas:
 **Replicação de ambientes:**
 - Para replicar ambientes venvs vamos utilizar o modulo no python chamado freeze. Para que ele possa salvar em um arquivo txt todos os modulos e bibliotecas que utilizamos no projeto.

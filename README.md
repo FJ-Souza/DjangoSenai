@@ -103,7 +103,7 @@ Após iniciar um projeto Django devemos inicializar um servidor para testarmos n
 **5.2-** Agora circulado de vermelho temos o codigo que devemos colocar. Além dessas alterações temos que colocar no final do nosso arquivo o files statics como veremos na foto a seguir.<br>
 ![static](https://github.com/IMNascimento/DjangoSenai/assets/28989407/2b6124f7-d661-4919-b8fc-0bb3dd18b806)<br>
 **5.3-** Como vemos na imagem a cima passamos um caminho de uma pasta static dentro de "trilhas/static", essa pasta static vai precisar ser criada na pastat base do seu projeto.<br>
-**5.4-** Agora nesse projeto peque as pastas css, js, e todos os itens de estilos e de javascript que vocês tiverem e coloquem dentro dessa pasta static.<br>
+**5.4-** Agora nesse projeto peque as pastas css, js, imagens e todos os itens de estilos e de javascript que vocês tiverem e coloquem dentro dessa pasta static.<br>
 **5.5-** Após colocar os arquivos você precisa executar o comando para o django visualizar os novos arquivos o comando é "python .\manage.py collectstatic" lembrando que para executar os comandos você tem que estar dentro da pasta do trilhas:<br>
 ```bash
 C:\DjangoSenai\trilhas> python .\manage.py collectstatic
@@ -538,6 +538,118 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 </html>
 ```
 
+**5.7-** Antes de testar agora vamos alterar os códigos da nossa inde.html para que ele possa encherga agora nosso css, js. No inicio do arquivo vamos colocar o {% load static %} e em cada link vamos colocar {% static 'caminho_do_seu_item/' %} como veremos os códigos a seguir:<br>
+```html5
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Nascimento</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="content">
+					<h1><a href="#">Igor Nascimento</a></h1>
+					<p>Aqui você colocara um curriculo seu,<br />
+					no formato de pdf para ser baixado</p>
+					<ul class="actions">
+						<li><a href="#" class="button primary icon solid fa-download">Download</a></li>
+						<li><a href="#one" class="button icon solid fa-chevron-down scrolly">Learn More</a></li>
+					</ul>
+				</div>
+				<div class="image phone"><div class="inner"><img src="{% static 'images/screen.jpg' %}" alt="" /></div></div>
+			</header>
+
+		<!-- One -->
+			<section id="one" class="wrapper style2 special">
+				<header class="major">
+					<h2>Seus principais serviços<br />
+					você colocara aqui</h2>
+				</header>
+				<ul class="icons major">
+					<li><span class="icon solid fa-camera-retro"><span class="label">Shoot</span></span></li>
+					<li><span class="icon solid fa-sync"><span class="label">Process</span></span></li>
+					<li><span class="icon solid fa-cloud"><span class="label">Upload</span></span></li>
+				</ul>
+			</section>
+
+		<!-- Two -->
+			<section id="two" class="wrapper">
+				<div class="inner alt">
+					<section class="spotlight">
+						<div class="image"><img src="{% static 'images/pic01.jpg' %}" alt="" /></div>
+						<div class="content">
+							<h3>Magna sed ultrices</h3>
+							<p>Morbi mattis ornare ornare. Duis quam turpis, gravida at leo elementum elit fusce accumsan dui libero, quis vehicula lectus ultricies eu. In convallis amet leo non sapien iaculis efficitur consequat lorem ipsum.</p>
+						</div>
+					</section>
+					<section class="spotlight">
+						<div class="image"><img src="{% static 'images/pic02.jpg' %}" alt="" /></div>
+						<div class="content">
+							<h3>Ultrices nullam aliquam</h3>
+							<p>Morbi mattis ornare ornare. Duis quam turpis, gravida at leo elementum elit fusce accumsan dui libero, quis vehicula lectus ultricies eu. In convallis amet leo non sapien iaculis efficitur consequat lorem ipsum.</p>
+						</div>
+					</section>
+					<section class="spotlight">
+						<div class="image"><img src="{% static 'images/pic03.jpg'%}" alt="" /></div>
+						<div class="content">
+							<h3>Aliquam sed magna</h3>
+							<p>Morbi mattis ornare ornare. Duis quam turpis, gravida at leo elementum elit fusce accumsan dui libero, quis vehicula lectus ultricies eu. In convallis amet leo non sapien iaculis efficitur consequat lorem ipsum.</p>
+						</div>
+					</section>
+					<section class="special">
+						<ul class="icons labeled">
+							<li><span class="icon solid fa-camera-retro"><span class="label">cada icone seus serviços</span></span></li>
+							<li><span class="icon solid fa-sync"><span class="label">Sed vehicula elementum</span></span></li>
+							<li><span class="icon solid fa-cloud"><span class="label">Elit fusce consequat</span></span></li>
+							<li><span class="icon solid fa-code"><span class="label">Lorem nullam tempus</span></span></li>
+							<li><span class="icon solid fa-desktop"><span class="label">Adipiscing amet sapien</span></span></li>
+						</ul>
+					</section>
+				</div>
+			</section>
+
+		<!-- Three -->
+			<section id="three" class="wrapper style2 special">
+				<header class="major">
+					<h2>Seu nome completo </h2>
+					<p>Um pouco sobre você e depois insira novamente o pdf<br />
+					com o seu curriculo para download.</p>
+				</header>
+				<ul class="actions special">
+					<li><a href="#" class="button primary icon solid fa-download">Download</a></li>
+					<li><a href="#" class="button">Learn More</a></li>
+				</ul>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+				</ul>
+				<p class="copyright">&copy; Untitled. Credits: <a href="http://html5up.net">HTML5 UP</a> , <a href="#">Nascimento</a> </p>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static 'assets/js/browser.min.js' %}"></script>
+			<script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<script src="{% static 'assets/js/main.js' %}"></script>
+
+	</body>
+</html>
+```
+**5.8-** Após ter executado esses passos acesse o navegador no endereço 127.0.0.1:8000 e teste verifique se seu layout apareceu corretamente.<br>
 
 
 

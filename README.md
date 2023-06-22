@@ -455,11 +455,40 @@ C:\DjangoSenai\trilhas> python .\manage.py collectstatic
 {% endblock %}
 ```
 **6.2-** Vá no navegador sua página ela tem que estar navegando normalmente. Caso apresente erro você colocou as escritas erradas ou a ordem de chamar os itens errada. O primeiro item a ser chamado é o extends, logo após é o load static e por ultimo é o block inicializando o bloco de conteudo. 
-
-
-
-
-
+## 7- Criando componentes com Partials no Django:
+**7.0-** Muita das vezes temos menus ou outra seção da nossa página que repitimos em outras páginas e isso não é uma boa pratica. Para solucionarmos esse problema precisamos criar componentes com esses blocos de código e chamar eles toda vez que necessario em nossas páginas, para isso utilizaremos o partials do python. No primeiro momento vamos criar uma pasta chamada "partials" dentro da nossa pasta template.
+**7.1-** Depois vamos criar dentro da pasta partials os arquivos footer.html e header.html e vou deixar os dois codigos ai para vocês verem:<br>
+**footer.html**
+```python
+<footer id="footer">
+    <ul class="icons">
+        <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+        <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+    </ul>
+    <p class="copyright">&copy; Untitled. Credits: <a href="http://html5up.net">HTML5 UP</a> , <a href="#">Nascimento</a> </p>
+</footer>
+```
+**header.html**
+```python
+{% load static %}
+<header id="header">
+    <div class="content">
+        <h1><a href="#">Igor Nascimento</a></h1>
+        <p>Aqui você colocara um curriculo seu,<br />
+        no formato de pdf para ser baixado</p>
+        <ul class="actions">
+            <li><a href="#" class="button primary icon solid fa-download">Download</a></li>
+            <li><a href="#one" class="button icon solid fa-chevron-down scrolly">Learn More</a></li>
+        </ul>
+    </div>
+    <div class="image phone"><div class="inner"><img src="{% static 'images/screen.jpg' %}" alt="" /></div></div>
+</header>
+```
+**7.2-** Por último vamos incluir esses nosso novo componente em nosso arquivo index.html para fazermos essa inclusão usaremos o código {% include 'partials/nome_seu_arquivo' %} como vemos as imagens a seguir da inclusão do header e do footer:<br>
+![header](https://github.com/IMNascimento/DjangoSenai/assets/28989407/5a7e71b8-62f4-4e97-95f3-cc2fdee72d4e)
+![footer](https://github.com/IMNascimento/DjangoSenai/assets/28989407/468922c1-5307-460b-88e9-3a80760621f4)
+**7.3-** Como vimos na imagem a cima marcado de vermelho os códigos utilizados no nosso index.html após a realização desse procedimento teste e verifique se sua aplicação continua carregando normalmente.
 
 ## Dicas:
 **Replicação de ambientes:**

@@ -331,9 +331,130 @@ C:\DjangoSenai\trilhas> python .\manage.py collectstatic
 </html>
 ```
 **5.8-** Após ter executado esses passos acesse o navegador no endereço 127.0.0.1:8000 e teste verifique se seu layout apareceu corretamente.<br>
+## 6- Criando Layout com extends no Django:
+**6.0-** O conceito DRY é muito ativo no Django e se você reparar todo inicio de código html é o mesmo em todas as páginas e isso é uma repetição desnecessaria. Para reutilização desses códigos usamos o extends. Vamos pegar todo nosso conteudo da primeira linha até a tag body e  quase no final da pagina vamos pegar também os códigos desde a tag script até o final, recorta para um arquivo que vamos fazer que é o layout.html.Vou deixar o código de como vai ficar esse novo arquivo layout.html:
+```python
 
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Nascimento</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload">
 
+    {% block content %} 
+    {% endblock %}
+    <!-- Scripts -->
+        <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+        <script src="{% static 'assets/js/jquery.scrolly.min.js' %}"></script>
+        <script src="{% static 'assets/js/browser.min.js' %}"></script>
+        <script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+        <script src="{% static 'assets/js/util.js' %}"></script>
+        <script src="{% static 'assets/js/main.js' %}"></script>
 
+	</body>
+</html>
+```
+**6.1-** Como vimos a cima usamos o {% block content %} para informa que teremos um block de conteudo ali dentro e usamos o {% endblock %} para mostrar o final do conteudo inserido. Agora para poder funcionar o layout temos que fazer algumas alteração no nosso index.html como a utilização do  {% block content %} par informa o inicio do conteudo e o {% extends 'nome_do_arquivo' %} para informa de qual layout você está puxando essas informações. Vou deixar o código do index.html para vocês verificarem o uso desses itens:
+
+```python
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+		<!-- Header -->
+			<header id="header">
+				<div class="content">
+					<h1><a href="#">Igor Nascimento</a></h1>
+					<p>Aqui você colocara um curriculo seu,<br />
+					no formato de pdf para ser baixado</p>
+					<ul class="actions">
+						<li><a href="#" class="button primary icon solid fa-download">Download</a></li>
+						<li><a href="#one" class="button icon solid fa-chevron-down scrolly">Learn More</a></li>
+					</ul>
+				</div>
+				<div class="image phone"><div class="inner"><img src="{% static 'images/screen.jpg' %}" alt="" /></div></div>
+			</header>
+
+		<!-- One -->
+			<section id="one" class="wrapper style2 special">
+				<header class="major">
+					<h2>Seus principais serviços<br />
+					você colocara aqui</h2>
+				</header>
+				<ul class="icons major">
+					<li><span class="icon solid fa-camera-retro"><span class="label">Shoot</span></span></li>
+					<li><span class="icon solid fa-sync"><span class="label">Process</span></span></li>
+					<li><span class="icon solid fa-cloud"><span class="label">Upload</span></span></li>
+				</ul>
+			</section>
+
+		<!-- Two -->
+			<section id="two" class="wrapper">
+				<div class="inner alt">
+					<section class="spotlight">
+						<div class="image"><img src="{% static 'images/pic01.jpg' %}" alt="" /></div>
+						<div class="content">
+							<h3>Magna sed ultrices</h3>
+							<p>Morbi mattis ornare ornare. Duis quam turpis, gravida at leo elementum elit fusce accumsan dui libero, quis vehicula lectus ultricies eu. In convallis amet leo non sapien iaculis efficitur consequat lorem ipsum.</p>
+						</div>
+					</section>
+					<section class="spotlight">
+						<div class="image"><img src="{% static 'images/pic02.jpg' %}" alt="" /></div>
+						<div class="content">
+							<h3>Ultrices nullam aliquam</h3>
+							<p>Morbi mattis ornare ornare. Duis quam turpis, gravida at leo elementum elit fusce accumsan dui libero, quis vehicula lectus ultricies eu. In convallis amet leo non sapien iaculis efficitur consequat lorem ipsum.</p>
+						</div>
+					</section>
+					<section class="spotlight">
+						<div class="image"><img src="{% static 'images/pic03.jpg'%}" alt="" /></div>
+						<div class="content">
+							<h3>Aliquam sed magna</h3>
+							<p>Morbi mattis ornare ornare. Duis quam turpis, gravida at leo elementum elit fusce accumsan dui libero, quis vehicula lectus ultricies eu. In convallis amet leo non sapien iaculis efficitur consequat lorem ipsum.</p>
+						</div>
+					</section>
+					<section class="special">
+						<ul class="icons labeled">
+							<li><span class="icon solid fa-camera-retro"><span class="label">cada icone seus serviços</span></span></li>
+							<li><span class="icon solid fa-sync"><span class="label">Sed vehicula elementum</span></span></li>
+							<li><span class="icon solid fa-cloud"><span class="label">Elit fusce consequat</span></span></li>
+							<li><span class="icon solid fa-code"><span class="label">Lorem nullam tempus</span></span></li>
+							<li><span class="icon solid fa-desktop"><span class="label">Adipiscing amet sapien</span></span></li>
+						</ul>
+					</section>
+				</div>
+			</section>
+
+		<!-- Three -->
+			<section id="three" class="wrapper style2 special">
+				<header class="major">
+					<h2>Seu nome completo </h2>
+					<p>Um pouco sobre você e depois insira novamente o pdf<br />
+					com o seu curriculo para download.</p>
+				</header>
+				<ul class="actions special">
+					<li><a href="#" class="button primary icon solid fa-download">Download</a></li>
+					<li><a href="#" class="button">Learn More</a></li>
+				</ul>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+				</ul>
+				<p class="copyright">&copy; Untitled. Credits: <a href="http://html5up.net">HTML5 UP</a> , <a href="#">Nascimento</a> </p>
+			</footer>
+
+{% endblock %}
+```
+**6.2-** Vá no navegador sua página ela tem que estar navegando normalmente. Caso apresente erro você colocou as escritas erradas ou a ordem de chamar os itens errada. O primeiro item a ser chamado é o extends, logo após é o load static e por ultimo é o block inicializando o bloco de conteudo. 
 
 
 

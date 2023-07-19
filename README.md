@@ -489,6 +489,44 @@ C:\DjangoSenai\trilhas> python .\manage.py collectstatic
 ![header](https://github.com/IMNascimento/DjangoSenai/assets/28989407/5a7e71b8-62f4-4e97-95f3-cc2fdee72d4e)<br>
 ![footer](https://github.com/IMNascimento/DjangoSenai/assets/28989407/468922c1-5307-460b-88e9-3a80760621f4)<br>
 **7.3-** Como vimos na imagem a cima marcado de vermelho os códigos utilizados no nosso index.html após a realização desse procedimento teste e verifique se sua aplicação continua carregando normalmente.<br>
+## 8- Criando banco de dados e migrations no Django:
+**8.0-** Já vimos que conseguimos mexer muito no nosso layout mas oque falta é deixar ele dinamico e então vamos criar um banco de dados para que todos os itens sejam cadastrado de forma dinamica pelo o usuário e retorne para os nossos templates para serem exibidos, nessa primeira parte nós instalaremos os modulos e criaremos as migrations.
+<br>
+**8.1-** Para usarmos o banco de dados mysql utilizaremos 2 modulos o mysql conector e o mysqlclient vou demonstrar o codigo de instalação dos mesmo para vocês:
+```bash
+(igor)C:\DjangoSenai\trilhas> pip install mysql-connector-python
+(igor)C:\DjangoSenai\trilhas> pip install mysqlclient
+```
+**8.2-** Após vocês terem instalado os módulos vá no seu arquivo de configuração settings.py em database e coloque as informações do seu banco como veremos na imagem a seguir:<br>
+![databaseconfig](https://github.com/IMNascimento/DjangoSenai/assets/28989407/14f4dc81-49cc-4703-92f5-c12b7e8cc12c)<br>
+**8.3-** Depois de alterado vá no seu "APP" que foi criado no nosso caso aqui é o siteTrilhas e vá no arquivo models.py e la coloque o seguinte código:
+
+```python
+from datetime import datetime
+from django.db import models
+
+# Create your models here.
+class Site(models.Model):
+    nome_card = models.CharField(max_length=200)
+    description =  models.TextField()
+    path = models.TextField()
+    primeiro_texto = models.TextField()
+    segundo_texto = models.TextField()
+    alunos = models.IntegerField()
+    date_create = models.DateTimeField(default=datetime.now, blank =True)
+```
+**8.4-** Após essas ações executadas precisamos informa ao django para ele pegar nossa model e transformar em uma migration, para isso executaremos o comando makemigrations como veremos no exemplo a seguir:
+```bash
+(igor)C:\DjangoSenai\trilhas> python manage.py makemigrations
+```
+**8.5-** Assim que o comando foi executado agora vamos pedir ao django para criar nosso banco de dados. Com comando migrate, quando esse comando for executado o python executará e criará nossas tabelas no banco de dados, vejam o exemplo a seguir:
+```bash
+(igor)C:\DjangoSenai\trilhas> python manage.py migrate
+```
+**8.6-** Por último vá ao seu banco de dados e verifique se suas tabelas foram criadas com sucesso.
+
+
+
 
 ## Dicas:
 **Replicação de ambientes:**

@@ -525,6 +525,15 @@ class Site(models.Model):
 ```
 **8.6-** Por último vá ao seu banco de dados e verifique se suas tabelas foram criadas com sucesso.
 
+## 9 - Criando o Admin no Django:
+**9.0-** Para poder utilizar um CRUD pronto do django devemos utilizar o modelo admin. Para isso precisamos de registrar nossos modelos, dentro do nosso app vamos verificar que existe um arquivo chamado admin.py vamos até ele e importaremos nosso modelo e registraremos o mesmo como veremos na imagem abaixo:<br>
+![admindjango](https://github.com/IMNascimento/DjangoSenai/assets/28989407/04ffca60-0a08-4149-8a1d-0fcad53f2988)<br>
+**9.1-** Agora devemos criar um super usuario para o django para isso iremos utilizar o seguinte comando no terminal:
+```bash
+(igor)C:\DjangoSenai\trilhas> python manage.py createsuperuser
+```
+**9.2-** A partir desse comando você deve digitar o nome do usuario e o email e senha de acesso. 
+**9.3-** Agora teste a aplicação acesse o admin e cadastre um item no banco de dados.
 
 
 

@@ -532,8 +532,8 @@ class Site(models.Model):
 ```bash
 (igor)C:\DjangoSenai\trilhas> python manage.py createsuperuser
 ```
-**9.2-** A partir desse comando você deve digitar o nome do usuario e o email e senha de acesso. 
-**9.3-** Agora teste a aplicação acesse o admin e cadastre um item no banco de dados.
+**9.2-** A partir desse comando você deve digitar o nome do usuario e o email e senha de acesso. <br>
+**9.3-** Agora teste a aplicação acesse o admin e cadastre um item no banco de dados.<br>
 
 
 

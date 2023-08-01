@@ -331,11 +331,199 @@ C:\DjangoSenai\trilhas> python .\manage.py collectstatic
 </html>
 ```
 **5.8-** Após ter executado esses passos acesse o navegador no endereço 127.0.0.1:8000 e teste verifique se seu layout apareceu corretamente.<br>
+## 6- Criando Layout com extends no Django:
+**6.0-** O conceito DRY é muito ativo no Django e se você reparar todo inicio de código html é o mesmo em todas as páginas e isso é uma repetição desnecessaria. Para reutilização desses códigos usamos o extends. Vamos pegar todo nosso conteudo da primeira linha até a tag body e  quase no final da pagina vamos pegar também os códigos desde a tag script até o final, recorta para um arquivo que vamos fazer que é o layout.html.Vou deixar o código de como vai ficar esse novo arquivo layout.html:
+```python
 
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Nascimento</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload">
 
+    {% block content %} 
+    {% endblock %}
+    <!-- Scripts -->
+        <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+        <script src="{% static 'assets/js/jquery.scrolly.min.js' %}"></script>
+        <script src="{% static 'assets/js/browser.min.js' %}"></script>
+        <script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+        <script src="{% static 'assets/js/util.js' %}"></script>
+        <script src="{% static 'assets/js/main.js' %}"></script>
 
+	</body>
+</html>
+```
+**6.1-** Como vimos a cima usamos o {% block content %} para informa que teremos um block de conteudo ali dentro e usamos o {% endblock %} para mostrar o final do conteudo inserido. Agora para poder funcionar o layout temos que fazer algumas alteração no nosso index.html como a utilização do  {% block content %} par informa o inicio do conteudo e o {% extends 'nome_do_arquivo' %} para informa de qual layout você está puxando essas informações. Vou deixar o código do index.html para vocês verificarem o uso desses itens:
 
+```python
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+		<!-- Header -->
+			<header id="header">
+				<div class="content">
+					<h1><a href="#">Igor Nascimento</a></h1>
+					<p>Aqui você colocara um curriculo seu,<br />
+					no formato de pdf para ser baixado</p>
+					<ul class="actions">
+						<li><a href="#" class="button primary icon solid fa-download">Download</a></li>
+						<li><a href="#one" class="button icon solid fa-chevron-down scrolly">Learn More</a></li>
+					</ul>
+				</div>
+				<div class="image phone"><div class="inner"><img src="{% static 'images/screen.jpg' %}" alt="" /></div></div>
+			</header>
 
+		<!-- One -->
+			<section id="one" class="wrapper style2 special">
+				<header class="major">
+					<h2>Seus principais serviços<br />
+					você colocara aqui</h2>
+				</header>
+				<ul class="icons major">
+					<li><span class="icon solid fa-camera-retro"><span class="label">Shoot</span></span></li>
+					<li><span class="icon solid fa-sync"><span class="label">Process</span></span></li>
+					<li><span class="icon solid fa-cloud"><span class="label">Upload</span></span></li>
+				</ul>
+			</section>
+
+		<!-- Two -->
+			<section id="two" class="wrapper">
+				<div class="inner alt">
+					<section class="spotlight">
+						<div class="image"><img src="{% static 'images/pic01.jpg' %}" alt="" /></div>
+						<div class="content">
+							<h3>Magna sed ultrices</h3>
+							<p>Morbi mattis ornare ornare. Duis quam turpis, gravida at leo elementum elit fusce accumsan dui libero, quis vehicula lectus ultricies eu. In convallis amet leo non sapien iaculis efficitur consequat lorem ipsum.</p>
+						</div>
+					</section>
+					<section class="spotlight">
+						<div class="image"><img src="{% static 'images/pic02.jpg' %}" alt="" /></div>
+						<div class="content">
+							<h3>Ultrices nullam aliquam</h3>
+							<p>Morbi mattis ornare ornare. Duis quam turpis, gravida at leo elementum elit fusce accumsan dui libero, quis vehicula lectus ultricies eu. In convallis amet leo non sapien iaculis efficitur consequat lorem ipsum.</p>
+						</div>
+					</section>
+					<section class="spotlight">
+						<div class="image"><img src="{% static 'images/pic03.jpg'%}" alt="" /></div>
+						<div class="content">
+							<h3>Aliquam sed magna</h3>
+							<p>Morbi mattis ornare ornare. Duis quam turpis, gravida at leo elementum elit fusce accumsan dui libero, quis vehicula lectus ultricies eu. In convallis amet leo non sapien iaculis efficitur consequat lorem ipsum.</p>
+						</div>
+					</section>
+					<section class="special">
+						<ul class="icons labeled">
+							<li><span class="icon solid fa-camera-retro"><span class="label">cada icone seus serviços</span></span></li>
+							<li><span class="icon solid fa-sync"><span class="label">Sed vehicula elementum</span></span></li>
+							<li><span class="icon solid fa-cloud"><span class="label">Elit fusce consequat</span></span></li>
+							<li><span class="icon solid fa-code"><span class="label">Lorem nullam tempus</span></span></li>
+							<li><span class="icon solid fa-desktop"><span class="label">Adipiscing amet sapien</span></span></li>
+						</ul>
+					</section>
+				</div>
+			</section>
+
+		<!-- Three -->
+			<section id="three" class="wrapper style2 special">
+				<header class="major">
+					<h2>Seu nome completo </h2>
+					<p>Um pouco sobre você e depois insira novamente o pdf<br />
+					com o seu curriculo para download.</p>
+				</header>
+				<ul class="actions special">
+					<li><a href="#" class="button primary icon solid fa-download">Download</a></li>
+					<li><a href="#" class="button">Learn More</a></li>
+				</ul>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+				</ul>
+				<p class="copyright">&copy; Untitled. Credits: <a href="http://html5up.net">HTML5 UP</a> , <a href="#">Nascimento</a> </p>
+			</footer>
+
+{% endblock %}
+```
+**6.2-** Vá no navegador sua página ela tem que estar navegando normalmente. Caso apresente erro você colocou as escritas erradas ou a ordem de chamar os itens errada. O primeiro item a ser chamado é o extends, logo após é o load static e por ultimo é o block inicializando o bloco de conteudo. 
+## 7- Criando componentes com Partials no Django:
+**7.0-** Muita das vezes temos menus ou outra seção da nossa página que repitimos em outras páginas e isso não é uma boa pratica. Para solucionarmos esse problema precisamos criar componentes com esses blocos de código e chamar eles toda vez que necessario em nossas páginas, para isso utilizaremos o partials do python. No primeiro momento vamos criar uma pasta chamada "partials" dentro da nossa pasta template.<br>
+**7.1-** Depois vamos criar dentro da pasta partials os arquivos footer.html e header.html e vou deixar os dois codigos ai para vocês verem:<br>
+**footer.html**
+```python
+<footer id="footer">
+    <ul class="icons">
+        <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+        <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+    </ul>
+    <p class="copyright">&copy; Untitled. Credits: <a href="http://html5up.net">HTML5 UP</a> , <a href="#">Nascimento</a> </p>
+</footer>
+```
+**header.html**
+```python
+{% load static %}
+<header id="header">
+    <div class="content">
+        <h1><a href="#">Igor Nascimento</a></h1>
+        <p>Aqui você colocara um curriculo seu,<br />
+        no formato de pdf para ser baixado</p>
+        <ul class="actions">
+            <li><a href="#" class="button primary icon solid fa-download">Download</a></li>
+            <li><a href="#one" class="button icon solid fa-chevron-down scrolly">Learn More</a></li>
+        </ul>
+    </div>
+    <div class="image phone"><div class="inner"><img src="{% static 'images/screen.jpg' %}" alt="" /></div></div>
+</header>
+```
+**7.2-** Por último vamos incluir esses nosso novo componente em nosso arquivo index.html para fazermos essa inclusão usaremos o código {% include 'partials/nome_seu_arquivo' %} como vemos as imagens a seguir da inclusão do header e do footer:<br>
+![header](https://github.com/IMNascimento/DjangoSenai/assets/28989407/5a7e71b8-62f4-4e97-95f3-cc2fdee72d4e)<br>
+![footer](https://github.com/IMNascimento/DjangoSenai/assets/28989407/468922c1-5307-460b-88e9-3a80760621f4)<br>
+**7.3-** Como vimos na imagem a cima marcado de vermelho os códigos utilizados no nosso index.html após a realização desse procedimento teste e verifique se sua aplicação continua carregando normalmente.<br>
+## 8- Criando banco de dados e migrations no Django:
+**8.0-** Já vimos que conseguimos mexer muito no nosso layout mas oque falta é deixar ele dinamico e então vamos criar um banco de dados para que todos os itens sejam cadastrado de forma dinamica pelo o usuário e retorne para os nossos templates para serem exibidos, nessa primeira parte nós instalaremos os modulos e criaremos as migrations.
+<br>
+**8.1-** Para usarmos o banco de dados mysql utilizaremos 2 modulos o mysql conector e o mysqlclient vou demonstrar o codigo de instalação dos mesmo para vocês:
+```bash
+(igor)C:\DjangoSenai\trilhas> pip install mysql-connector-python
+(igor)C:\DjangoSenai\trilhas> pip install mysqlclient
+```
+**8.2-** Após vocês terem instalado os módulos vá no seu arquivo de configuração settings.py em database e coloque as informações do seu banco como veremos na imagem a seguir:<br>
+![databaseconfig](https://github.com/IMNascimento/DjangoSenai/assets/28989407/14f4dc81-49cc-4703-92f5-c12b7e8cc12c)<br>
+**8.3-** Depois de alterado vá no seu "APP" que foi criado no nosso caso aqui é o siteTrilhas e vá no arquivo models.py e la coloque o seguinte código:
+
+```python
+from datetime import datetime
+from django.db import models
+
+# Create your models here.
+class Site(models.Model):
+    nome_card = models.CharField(max_length=200)
+    description =  models.TextField()
+    path = models.TextField()
+    primeiro_texto = models.TextField()
+    segundo_texto = models.TextField()
+    alunos = models.IntegerField()
+    date_create = models.DateTimeField(default=datetime.now, blank =True)
+```
+**8.4-** Após essas ações executadas precisamos informa ao django para ele pegar nossa model e transformar em uma migration, para isso executaremos o comando makemigrations como veremos no exemplo a seguir:
+```bash
+(igor)C:\DjangoSenai\trilhas> python manage.py makemigrations
+```
+**8.5-** Assim que o comando foi executado agora vamos pedir ao django para criar nosso banco de dados. Com comando migrate, quando esse comando for executado o python executará e criará nossas tabelas no banco de dados, vejam o exemplo a seguir:
+```bash
+(igor)C:\DjangoSenai\trilhas> python manage.py migrate
+```
+**8.6-** Por último vá ao seu banco de dados e verifique se suas tabelas foram criadas com sucesso.
 
 
 

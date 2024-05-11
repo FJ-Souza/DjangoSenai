@@ -540,6 +540,11 @@ class Site(models.Model):
 
 
 ## Dicas:
+**Porta Banco de Dados:**
+- Como padrão do mysql ele fica na porta '3306', caso você queira saber em qual porta o seu esta, sigua o passo abaixo:
+1- Va no xampp
+2- Ligue o mysql
+3- O número da porta aparecera logo que o mysql for iniciado
 **Criação de projetos como setup:**
 - Ao criar projetos com o comando "django-admin startproject 'nome_do_projeto'", podemos colocar o nome do projeto como "setup".
 - Assim, quando for criado, basta trocar o nome da pasta principal para o desejado.

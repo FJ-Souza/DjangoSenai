@@ -538,6 +538,13 @@ class Site(models.Model):
 
 
 ## Dicas:
+**Criação de projetos como setup:**
+- Ao criar projetos com o comando "django-admin startproject 'nome_do_projeto'", podemos colocar o nome do projeto como "setup".
+- Assim, quando for criado, basta trocar o nome da pasta principal para o desejado.
+- A estrutura ficará assim:
+- ![djangosetupcodigo](https://github.com/IMNascimento/DjangoSenai/assets/160553204/17545d39-b212-4738-8f68-beb37a085d1f)
+- ![djangosetup](https://github.com/IMNascimento/DjangoSenai/assets/160553204/9be8fd74-e296-42df-a060-d427fa36c65b)
+
 **Replicação de ambientes:**
 - Para replicar ambientes venvs vamos utilizar o modulo no python chamado freeze. Para que ele possa salvar em um arquivo txt todos os modulos e bibliotecas que utilizamos no projeto.
 - Basta utilizar o comando "pip freeze > nome_arquivo.txt":

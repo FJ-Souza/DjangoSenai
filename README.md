@@ -41,7 +41,7 @@ python3 -m venv igor
 ```
 ## 1- Servidor Django:
 Após iniciar um projeto Django, renomeia a pasta pai 'setup' para 'trilhas' para não confundir com a pasta do projeto, agora devemos inicializar um servidor para testarmos nossa aplicação, para isso iremos fazer os seguintes passos.<br><br>
-**1.0-** Entre na pasta do projeto criado com o comando <b>cd 'nome_da_pasta'<b>.<br>
+**1.0-** Entre na pasta do projeto criado com o comando <b>cd 'nome_da_pasta'</b>.<br>
     - Iniciar um servidor "python manage.py runserver":
 ```bash
 (igor)C:\python\Django> cd trilhas

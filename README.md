@@ -40,7 +40,7 @@ python3 -m venv igor
  (igor)C:\python\Django> django-admin startproject setup
 ```
 ## 1- Servidor Django:
-Após iniciar um projeto Django, renomeia a pasta pai 'setup' para 'trilhas' para não confundir com a pasta do projeto, agora devemos inicializar um servidor para testarmos nossa aplicação, para isso iremos fazer os seguintes passos.<br><br>
+Após iniciar um projeto Django, renomeie a pasta pai 'setup' para 'trilhas' para não confundir com a pasta do projeto, agora devemos inicializar um servidor para testarmos nossa aplicação, para isso iremos fazer os seguintes passos.<br><br>
 **1.0-** Entre na pasta do projeto criado com o comando cd 'nome_da_pasta'.<br>
     - Iniciar um servidor "python manage.py runserver":
 ```bash

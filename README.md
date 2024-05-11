@@ -541,7 +541,7 @@ class Site(models.Model):
 
 ## Dicas:
 **Porta Banco de Dados:**
-- Como padrão do mysql ele fica na porta '3306', caso você queira saber em qual porta o seu esta, sigua o passo abaixo:
+- Como padrão do mysql ele fica na porta '3306', caso o seu não esteja nessa porta, para saber em qual porta o seu esta, sigua o passo abaixo:
 - Va no xampp.
 - Ligue o mysql.
 - O número da porta aparecera logo que o mysql for iniciado.

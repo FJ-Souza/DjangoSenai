@@ -68,8 +68,8 @@ Após iniciar um projeto Django, renomeie a pasta pai 'setup' para 'trilhas' par
 -Deixamos novamente com a cor vermelho o sistema de diretorio até o arquivo e marcado de verde a linha com nome que seria inserido.<br>
 - Agora que nossa aplicação já foi cadastrada podemos testar se ela irá funcionar corretamente. Para isso precisaremos criar urls para o carregamento externo de nossa página. Veremos essa criação na próxima etapa.
 
-## 3- Criando Url no App Django:
-**3.0-** Criação de um arquivo urls.py dentro do seu app que no nosso caso chama "siteTrilhas":<br>
+## 3- Criando Url no projeto Django:
+**3.0-** Criação de um arquivo urls.py dentro do seu projeto que no nosso caso chama "siteTrilhas":<br>
 ![url](https://github.com/IMNascimento/DjangoSenai/assets/28989407/1b3bf2eb-b78c-4c4b-8693-254a718bdb19)<br>
 **3.1-** Quando criarmos esse arquivo url o editor irá informa que não existe o método para isso iremos criar ele em seguida.<br>
 ![view](https://github.com/IMNascimento/DjangoSenai/assets/28989407/eb553e1c-4356-4980-800d-ad52bb5fd3d6)<br>
@@ -77,8 +77,8 @@ Após iniciar um projeto Django, renomeie a pasta pai 'setup' para 'trilhas' par
 ![rotas](https://github.com/IMNascimento/DjangoSenai/assets/160553204/ab165b57-654b-4c14-968d-d939bbaf8d3c)<br>
 - Agora registramos nossa rota basta apenas você acessar e verificar se o acesso funcionou corretamente na web. Deixamos marcado de vermelho na imagem o sistema de diretorio para o seu auxilio e deixamos na marcação verde os itens que deve ser adicionado no seu arquivo para o funcionamento correto.
 
-## 4- Criando Templates no App Django:
-**4.0-** Primeiro dentro da pasta do seu app crie uma pasta chamada templates. No nosso casso nosso app chama "siteTrilhas" e dentro dessa pasta nós iremos criar uma pasta chamada "templates".<br>
+## 4- Criando Templates no Psrojeto Django:
+**4.0-** Primeiro dentro da pasta do seu projeto crie uma pasta chamada templates. No nosso casso nosso projeto chama "siteTrilhas" e dentro dessa pasta nós iremos criar uma pasta chamada "templates".<br>
 **4.1-** Dentro dessa pasta crie um arquivo chamado index.html e coloque os seguintes códigos: 
 ```html5
 <!DOCTYPE html>

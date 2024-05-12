@@ -557,6 +557,8 @@ nome que você informou no passo 8.2(nesse caso 'django')
 - pip freeze > requirements.txt
 - Esse comando lista todas as dependências instaladas no ambiente e grava o resultado no arquivo requirements.txt.
 - Uma das principais vantagens do método pip freeze é que ele é muito fácil de usar e requer apenas o uso do terminal. Além disso, o arquivo requirements.txt gerado pode ser facilmente compartilhado com outros desenvolvedores e utilizado em outros ambientes, garantindo que todos estejam usando as mesmas versões de bibliotecas.
+- E quando for necessário instalar os pacotes registrados no requirements.txt você pode digitar o seguinte comando no terminal:
+- pip install -r requirements.txt
 
 **Porta Banco de Dados:**
 - Como padrão do mysql ele fica na porta '3306', caso o seu não esteja nessa porta, para saber em qual porta o seu esta, sigua o passo abaixo:

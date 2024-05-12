@@ -499,8 +499,14 @@ C:\DjangoSenai\trilhas> python .\manage.py collectstatic
 (igor)C:\DjangoSenai\trilhas> pip install mysql-connector-python
 (igor)C:\DjangoSenai\trilhas> pip install mysqlclient
 ```
-**8.2-** Após vocês terem instalado os módulos vá no seu arquivo de configuração settings.py em database e coloque as informações do seu banco como veremos na imagem a seguir:<br>
+**8.2-** Após vocês terem instalado os módulos vá no seu arquivo de configuração settings.py em database e coloque as informações do seu banco como veremos na imagem a seguir:
+<br>
 ![databaseconfig](https://github.com/IMNascimento/DjangoSenai/assets/28989407/14f4dc81-49cc-4703-92f5-c12b7e8cc12c)<br>
+**ATENÇÃO**
+<br>
+Por padrão do Django, o campo 'Engine' vem descrito 'django.db.backends.sqlite3'. Caso você queira usar o banco mysql, você deve mudar obrigatoriamente para 'django.db.backends.mysql', se não o seu banco de dados não funcionara.
+<br>
+
 **8.3-** Depois de alterado vá no seu "APP" que foi criado no nosso caso aqui é o siteTrilhas e vá no arquivo models.py e la coloque o seguinte código:
 
 ```python

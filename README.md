@@ -104,7 +104,7 @@ Após iniciar um projeto Django, renomeie a pasta pai 'setup' para 'trilhas' par
 ![temp](https://github.com/IMNascimento/DjangoSenai/assets/28989407/cbbdea71-6f9d-47f5-997b-291613c8884d)<br>
 **5.2-** Agora circulado de vermelho temos o codigo que devemos colocar. Além dessas alterações temos que colocar no final do nosso arquivo o files statics como veremos na foto a seguir.<br>
 ![static](https://github.com/IMNascimento/DjangoSenai/assets/28989407/2b6124f7-d661-4919-b8fc-0bb3dd18b806)<br>
-**5.3-** Como vemos na imagem a cima passamos um caminho de uma pasta static dentro de "setup/static", essa pasta static vai precisar ser criada na pasta base do seu projeto.<br>
+**5.3-** Como vemos na imagem a cima passamos um caminho de uma pasta static dentro de "setup/static", essa pasta static vai precisar ser criada na pasta base do seu projeto, porém a pasta static só vai ser criada na pasta base do projeto se o usuario executar o comando "python .\manage.py collectstatic".<br>
 **5.4-** Agora nesse projeto pegue as pastas css, js, imagens e todos os itens de estilos e de javascript que vocês tiverem e coloquem dentro dessa pasta static.<br>
 **5.5-** Após colocar os arquivos você precisa executar o comando para o django visualizar os novos arquivos o comando é "python .\manage.py collectstatic" lembrando que para executar os comandos você tem que estar dentro da pasta do trilhas:<br>
 ```bash

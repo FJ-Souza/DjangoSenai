@@ -458,8 +458,8 @@ C:\DjangoSenai\trilhas> python .\manage.py collectstatic
 ```
 **6.2-** Vá no navegador sua página ela tem que estar navegando normalmente. Caso apresente erro você colocou as escritas erradas ou a ordem de chamar os itens errada. O primeiro item a ser chamado é o extends, logo após é o load static e por ultimo é o block inicializando o bloco de conteudo. 
 ## 7- Criando componentes com Partials no Django:
-**7.0-** Muita das vezes temos menus ou outra seção da nossa página que repitimos em outras páginas e isso não é uma boa pratica. Para solucionarmos esse problema precisamos criar componentes com esses blocos de código e chamar eles toda vez que necessario em nossas páginas, para isso utilizaremos o partials do python. No primeiro momento vamos criar uma pasta chamada "partials" dentro da nossa pasta template.<br>
-**7.1-** Depois vamos criar dentro da pasta partials os arquivos footer.html e header.html e vou deixar os dois codigos ai para vocês verem:<br>
+**7.0-** Muita das vezes temos menus ou outra seção da nossa página que repetimos em outras páginas e isso não é uma boa prática. Para solucionarmos esse problema precisamos criar componentes com esses blocos de código e chamar eles toda vez que necessário em nossas páginas, para isso utilizaremos o partials do python. No primeiro momento vamos criar uma pasta chamada "partials" dentro da nossa pasta template.<br>
+**7.1-** Depois vamos criar dentro da pasta partials os arquivos footer.html e header.html e vou deixar os dois códigos aí para vocês verem:<br>
 **footer.html**
 ```python
 <footer id="footer">
@@ -487,7 +487,7 @@ C:\DjangoSenai\trilhas> python .\manage.py collectstatic
     <div class="image phone"><div class="inner"><img src="{% static 'images/screen.jpg' %}" alt="" /></div></div>
 </header>
 ```
-**7.2-** Por último vamos incluir esses nosso novo componente em nosso arquivo index.html para fazermos essa inclusão usaremos o código {% include 'partials/nome_seu_arquivo' %} como vemos as imagens a seguir da inclusão do header e do footer:<br>
+**7.2-** Por último vamos incluir esses nossos novos componentes em nosso arquivo index.html para fazermos essa inclusão usaremos o código {% include 'partials/nome_seu_arquivo' %} como vemos as imagens a seguir da inclusão do header e do footer:<br>
 ![header](https://github.com/IMNascimento/DjangoSenai/assets/28989407/5a7e71b8-62f4-4e97-95f3-cc2fdee72d4e)<br>
 ![footer](https://github.com/IMNascimento/DjangoSenai/assets/28989407/468922c1-5307-460b-88e9-3a80760621f4)<br>
 **7.3-** Como vimos na imagem a cima marcado de vermelho os códigos utilizados no nosso index.html após a realização desse procedimento teste e verifique se sua aplicação continua carregando normalmente.<br>

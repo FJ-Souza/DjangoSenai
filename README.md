@@ -65,7 +65,7 @@ Após iniciar um projeto Django, renomeie a pasta pai 'setup' para 'trilhas' par
 **2.1-** Agora vamos registrar esse app vamos na pasta do nosso projeto e encontraremos o arquivo "settings.py" nele iremos inserir o nome da nossa aplicação como iremos verificar na foto a seguir:<br>
 ![registro](https://github.com/IMNascimento/DjangoSenai/assets/160553204/b3e260f9-1fbe-4ebf-81a3-8bd9f5780870)
 <br>
--Deixamos novamente com a cor vermelho o sistema de diretorio até o arquivo e marcado de verde a linha com nome que seria inserido.<br>
+-Deixamos novamente com a cor vermelho o sistema de diretorio até o arquivo e marcado de amarelo a linha com nome que seria inserido.<br>
 - Agora que nossa aplicação já foi cadastrada podemos testar se ela irá funcionar corretamente. Para isso precisaremos criar urls para o carregamento externo de nossa página. Veremos essa criação na próxima etapa.
 
 ## 3- Criando Url no projeto Django:
@@ -75,7 +75,7 @@ Após iniciar um projeto Django, renomeie a pasta pai 'setup' para 'trilhas' par
 ![view](https://github.com/IMNascimento/DjangoSenai/assets/28989407/eb553e1c-4356-4980-800d-ad52bb5fd3d6)<br>
 **3.2-** Como vimos na imagem acima criamos uma view para exibir um texto "Olá mundo." na nossa página web. Por último Precisamos registrar nossas rotas. <br>
 ![rotas](https://github.com/IMNascimento/DjangoSenai/assets/160553204/ab165b57-654b-4c14-968d-d939bbaf8d3c)<br>
-- Agora registramos nossa rota basta apenas você acessar e verificar se o acesso funcionou corretamente na web. Deixamos marcado de vermelho na imagem o sistema de diretorio para o seu auxilio e deixamos na marcação verde os itens que deve ser adicionado no seu arquivo para o funcionamento correto.
+- Agora registramos nossa rota basta apenas você acessar e verificar se o acesso funcionou corretamente na web. Deixamos marcado de vermelho na imagem o sistema de diretorio para o seu auxilio e deixamos na marcação amarelo os itens que deve ser adicionado no seu arquivo para o funcionamento correto.
 
 ## 4- Criando Templates no Psrojeto Django:
 **4.0-** Primeiro dentro da pasta do seu projeto crie uma pasta chamada templates. No nosso casso nosso projeto chama "siteTrilhas" e dentro dessa pasta nós iremos criar uma pasta chamada "templates".<br>
@@ -104,8 +104,8 @@ Após iniciar um projeto Django, renomeie a pasta pai 'setup' para 'trilhas' par
 ![temp](https://github.com/IMNascimento/DjangoSenai/assets/28989407/cbbdea71-6f9d-47f5-997b-291613c8884d)<br>
 **5.2-** Agora circulado de vermelho temos o codigo que devemos colocar. Além dessas alterações temos que colocar no final do nosso arquivo o files statics como veremos na foto a seguir.<br>
 ![static](https://github.com/IMNascimento/DjangoSenai/assets/28989407/2b6124f7-d661-4919-b8fc-0bb3dd18b806)<br>
-**5.3-** Como vemos na imagem a cima passamos um caminho de uma pasta static dentro de "trilhas/static", essa pasta static vai precisar ser criada na pastat base do seu projeto.<br>
-**5.4-** Agora nesse projeto peque as pastas css, js, imagens e todos os itens de estilos e de javascript que vocês tiverem e coloquem dentro dessa pasta static.<br>
+**5.3-** Como vemos na imagem a cima passamos um caminho de uma pasta static dentro de "setup/static", essa pasta static vai precisar ser criada na pasta base do seu projeto, porém a pasta static só vai ser criada na pasta base do projeto se o usuario executar o comando "python .\manage.py collectstatic".<br>
+**5.4-** Agora nesse projeto pegue as pastas css, js, imagens e todos os itens de estilos e de javascript que vocês tiverem e coloquem dentro dessa pasta static.<br>
 **5.5-** Após colocar os arquivos você precisa executar o comando para o django visualizar os novos arquivos o comando é "python .\manage.py collectstatic" lembrando que para executar os comandos você tem que estar dentro da pasta do trilhas:<br>
 ```bash
 C:\DjangoSenai\trilhas> python .\manage.py collectstatic
@@ -221,7 +221,7 @@ C:\DjangoSenai\trilhas> python .\manage.py collectstatic
 </html>
 ```
 
-**5.7-** Antes de testar agora vamos alterar os códigos da nossa inde.html para que ele possa encherga agora nosso css, js. No inicio do arquivo vamos colocar o {% load static %} e em cada link vamos colocar {% static 'caminho_do_seu_item/' %} como veremos os códigos a seguir:<br>
+**5.7-** Antes de testar agora vamos alterar os códigos da nossa index.html para que ele possa encherga agora nosso css, js. No inicio do arquivo vamos colocar o {% load static %} e em cada link vamos colocar {% static 'caminho_do_seu_item/' %} como veremos os códigos a seguir:<br>
 ```html5
 {% load static %}
 <!DOCTYPE HTML>

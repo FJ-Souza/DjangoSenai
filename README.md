@@ -563,7 +563,7 @@ nome que você informou no passo 8.2(nesse caso 'django')
 
 ## 11 - Criar Formulários
 **11.0** Construir formulários (forms) no Django é uma prática fundamental para a criação de aplicativos da web dinâmicos e interativos. Aqui vai algumas etapas para criação de formulários:
-<br>
+
 **11.1** Vamos primeiramente criar um arquivo chamado "forms.py" dentro do seu APP.<br>
 ![criacao-arquivo-forms](https://github.com/IMNascimento/DjangoSenai/assets/28989407/c4ba8b96-6c00-4473-8df1-42057f9c33c4)
 <br>

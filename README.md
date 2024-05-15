@@ -549,6 +549,23 @@ nome que você informou no passo 8.2(nesse caso 'django')
 **9.2-** A partir desse comando você deve digitar o nome do usuario e o email e senha de acesso. <br>
 **9.3-** Agora teste a aplicação acesse o admin e cadastre um item no banco de dados.<br>
 
+## 10 - Criação do Média
+**10.0** Em alguns projetos, especialmente aplicativos web ou aplicativos que lidam com mídia (como imagens, vídeos, áudio), pode haver uma pasta chamada media para armazenar esses arquivos. Isso ajuda a manter uma estrutura organizada do projeto, separando o código-fonte dos recursos de mídia. Para criarmos essa pasta devemos seguir os seguintes passos:
+
+**10.1** Vamos informa no nosso arquivo settings.py o ROOT e o URL da pasta, aonde o ROOT é onde estará localizada a pasta principal e a URL seria o caminho até a mesma. Veja na foto abaixo:
+![configuracao-settings-media](https://github.com/IMNascimento/DjangoSenai/assets/28989407/ac70b2a0-2e6f-4c1c-9ccd-c606ef4caed9)<br>
+**10.2** Agora vamos configura nossa url. Como estamos em um servidor local, precisamos informa que esse link do media é um link estático. Para fazermos isso iremos no arquivo urls.py dentro da pasta setup e adicionaremos os seguintes códigos:
+![configuracao-url](https://github.com/IMNascimento/DjangoSenai/assets/28989407/d3f27dff-b5fd-44cf-9afa-5afb8e5f8c45)<br>
+**10.3** Agora como última etapa iremos configurar o campo da imagem na tabela que queremos armazenar esse arquivo, essa alteração é feita direto no arquivo models.py do seu APP.
+![configuracao-models-media](https://github.com/IMNascimento/DjangoSenai/assets/28989407/5c64f040-824a-4b36-b5b5-f29ee68b6b08)<br> 
+
+
+
+## 11 - Criar Formulários
+**11.0** Construir formulários (forms) no Django é uma prática fundamental para a criação de aplicativos da web dinâmicos e interativos. Aqui vai algumas etapas para criação de formulários:
+**11.1** Vamos primeiramente criar um arquivo chamado "forms.py" dentro do seu APP.
+![criacao-arquivo-forms](https://github.com/IMNascimento/DjangoSenai/assets/28989407/c4ba8b96-6c00-4473-8df1-42057f9c33c4)
+<br>
 
 
 ## Dicas:
@@ -570,8 +587,8 @@ nome que você informou no passo 8.2(nesse caso 'django')
 - Ao criar projetos com o comando "django-admin startproject 'nome_do_projeto'", podemos colocar o nome do projeto como "setup".
 - Assim, quando for criado, basta trocar o nome da pasta principal para o desejado.
 - A estrutura ficará assim:
-- ![djangosetupcodigo](https://github.com/IMNascimento/DjangoSenai/assets/160553204/17545d39-b212-4738-8f68-beb37a085d1f)
-- ![djangosetup](https://github.com/IMNascimento/DjangoSenai/assets/160553204/9be8fd74-e296-42df-a060-d427fa36c65b)
+![djangosetupcodigo](https://github.com/IMNascimento/DjangoSenai/assets/160553204/17545d39-b212-4738-8f68-beb37a085d1f)
+![djangosetup](https://github.com/IMNascimento/DjangoSenai/assets/160553204/9be8fd74-e296-42df-a060-d427fa36c65b)
 
 **Replicação de ambientes:**
 - Para replicar ambientes venvs vamos utilizar o modulo no python chamado freeze. Para que ele possa salvar em um arquivo txt todos os modulos e bibliotecas que utilizamos no projeto.

@@ -101,9 +101,10 @@ Após iniciar um projeto Django, renomeie a pasta pai 'setup' para 'trilhas' par
 **5.0-** Vamos no arquivo settings.py na pasta do seu projeto e na linha de templates altere como vai demonstrar a foto a baixo:<br>
 ![os](https://github.com/IMNascimento/DjangoSenai/assets/28989407/69b21f1e-fe85-409b-ac94-f46aea5a3048)<br>
 **5.1-** Esse import OS nós adicionamos no inicio do arquivo settings.py.<br>
-![temp](https://github.com/IMNascimento/DjangoSenai/assets/28989407/cbbdea71-6f9d-47f5-997b-291613c8884d)<br>
+![templates](https://github.com/IMNascimento/DjangoSenai/assets/28989407/752e8350-7d0f-4dec-b3be-cf5b43762f0d)
+<br>
 **5.2-** Agora circulado de vermelho temos o codigo que devemos colocar. Além dessas alterações temos que colocar no final do nosso arquivo o files statics como veremos na foto a seguir.<br>
-![static](https://github.com/IMNascimento/DjangoSenai/assets/28989407/2b6124f7-d661-4919-b8fc-0bb3dd18b806)<br>
+![static](https://github.com/IMNascimento/DjangoSenai/assets/28989407/c3514264-7738-495d-9b16-5ae0e634b39a)<br>
 **5.3-** Como vemos na imagem a cima passamos um caminho de uma pasta static dentro de "setup/static", essa pasta static vai precisar ser criada na pasta base do seu projeto, porém a pasta static só vai ser criada na pasta base do projeto se o usuario executar o comando "python .\manage.py collectstatic".<br>
 **5.4-** Agora nesse projeto pegue as pastas css, js, imagens e todos os itens de estilos e de javascript que vocês tiverem e coloquem dentro dessa pasta static.<br>
 **5.5-** Após colocar os arquivos você precisa executar o comando para o django visualizar os novos arquivos o comando é "python .\manage.py collectstatic" lembrando que para executar os comandos você tem que estar dentro da pasta do trilhas:<br>

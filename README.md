@@ -570,13 +570,17 @@ nome que você informou no passo 8.2(nesse caso 'django')
 
 
 ## Dicas:
-**VENV**
-- Caso você mude de computador sua venv possivelmente não funcionará então para resolver esse problema ultilizamos o seguinte comando dentro da sua venv:
-- pip freeze > requirements.txt
-- Esse comando lista todas as dependências instaladas no ambiente e grava o resultado no arquivo requirements.txt.
-- Uma das principais vantagens do método pip freeze é que ele é muito fácil de usar e requer apenas o uso do terminal. Além disso, o arquivo requirements.txt gerado pode ser facilmente compartilhado com outros desenvolvedores e utilizado em outros ambientes, garantindo que todos estejam usando as mesmas versões de bibliotecas.
-- E quando for necessário instalar os pacotes registrados no requirements.txt você pode digitar o seguinte comando no terminal:
-- pip install -r requirements.txt
+
+**Replicação de ambientes:**
+- Para replicar ambientes venvs vamos utilizar o modulo no python chamado freeze. Para que ele possa salvar em um arquivo txt todos os modulos e bibliotecas que utilizamos no projeto.
+- Basta utilizar o comando "pip freeze > nome_arquivo.txt":
+```bash
+(igor)C:\python\Django> pip freeze > requeriments.txt
+```
+- Agora para você voltar e criar um servidor igual basta utilizar o comando "pip install -r nome_do_arquivo.txt"
+```bash
+(igor)C:\python\Django> pip install -r requeriments.txt
+```
 
 **Porta Banco de Dados:**
 - Como padrão do mysql ele fica na porta '3306', caso o seu não esteja nessa porta, para saber em qual porta o seu esta, sigua o passo abaixo:
@@ -591,16 +595,7 @@ nome que você informou no passo 8.2(nesse caso 'django')
 ![djangosetupcodigo](https://github.com/IMNascimento/DjangoSenai/assets/160553204/17545d39-b212-4738-8f68-beb37a085d1f)
 ![djangosetup](https://github.com/IMNascimento/DjangoSenai/assets/160553204/9be8fd74-e296-42df-a060-d427fa36c65b)
 
-**Replicação de ambientes:**
-- Para replicar ambientes venvs vamos utilizar o modulo no python chamado freeze. Para que ele possa salvar em um arquivo txt todos os modulos e bibliotecas que utilizamos no projeto.
-- Basta utilizar o comando "pip freeze > nome_arquivo.txt":
-```bash
-(igor)C:\python\Django> pip freeze > requeriments.txt
-```
-- Agora para você voltar e criar um servidor igual basta utilizar o comando "pip install -r nome_do_arquivo.txt"
-```bash
-(igor)C:\python\Django> pip install -r requeriments.txt
-```
+
 **Desativação de uma VENV:**
 - Para desativar uma VENV basta apenas executar o comando "deactivate":
  ```bash

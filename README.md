@@ -78,7 +78,7 @@ Após iniciar um projeto Django, renomeie a pasta pai 'setup' para 'trilhas' par
 - Agora registramos nossa rota basta apenas você acessar e verificar se o acesso funcionou corretamente na web. Deixamos marcado de vermelho na imagem o sistema de diretorio para o seu auxilio e deixamos na marcação amarelo os itens que deve ser adicionado no seu arquivo para o funcionamento correto.
 
 ## 4- Criando Templates no Projeto Django:
-**4.0-** Primeiro dentro da pasta do seu projeto crie uma pasta chamada templates. No nosso casso nosso projeto chama "siteTrilhas" e dentro dessa pasta nós iremos criar uma pasta chamada "templates".<br>
+**4.0-** Primeiro dentro da pasta do seu projeto crie uma pasta chamada templates. No nosso casso nosso projeto chama "trilhas" e dentro dessa pasta nós iremos criar uma pasta chamada "templates".<br>
 **4.1-** Dentro dessa pasta crie um arquivo chamado index.html e coloque os seguintes códigos: 
 ```html5
 <!DOCTYPE html>
